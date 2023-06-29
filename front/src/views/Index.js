@@ -219,6 +219,11 @@ export default function Index() {
                   className="path3"
                   src={require("assets/img/path5.png")}
                 />
+                <img
+                  alt="..."
+                  className="path4"
+                  src={require("assets/img/path1.png")}
+                />
                 <Row>
                   <Col className="ml-auto mr-auto text-center mb-3" md="8">
                     <h6 className="category text-muted">Nuestro trabajo</h6>
@@ -356,161 +361,173 @@ export default function Index() {
             </div>
           </section>
           {/* ********* CONTACT US 1 ********* */}
-          <div
-            className="contactus-1 section-image mb-5"
-            style={
-              {
-                // backgroundImage: "url(" + require("assets/img/contact1.jpg") + ")",
-              }
-            }
-          >
-            <Container className="mb-5">
-              <Row>
-                <Col className="ml-auto mr-auto text-center mb-5" md="8">
-                  <h2 className="title mt-0">Contáctenos</h2>
-                </Col>
-              </Row>
-              <Row>
-                <Col md="5">
-                  <h2 className="title">Get in Touch</h2>
-                  <h4 className="description">
-                    You need more information? Check what other persons are
-                    saying about our product. They are very happy with their
-                    purchase.
-                  </h4>
-                  <div className="info info-horizontal">
-                    <div className="icon icon-primary">
-                      <i className="tim-icons icon-square-pin" />
+          <section className="section section-lg">
+            {/* <img
+              alt="..."
+              className="path1"
+              src={require("assets/img/path2.png")}
+            /> */}
+            <img
+              alt="..."
+              className="path3"
+              src={require("assets/img/path5.png")}
+            />
+            <img
+                  alt="..."
+                  className="path2"
+                  src={require("assets/img/path2.png")}
+                />
+            <div
+              className="contactus-1 mb-5"
+            >
+              <Container className="mb-5">
+                <Row>
+                  <Col className="ml-auto mr-auto text-center mb-5" md="8">
+                    <h2 className="title mt-0">Contáctenos</h2>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col md="5">
+                    <h2 className="title">Get in Touch</h2>
+                    <h4 className="description">
+                      You need more information? Check what other persons are
+                      saying about our product. They are very happy with their
+                      purchase.
+                    </h4>
+                    <div className="info info-horizontal">
+                      <div className="icon icon-primary">
+                        <i className="tim-icons icon-square-pin" />
+                      </div>
+                      <div className="description">
+                        <h4 className="info-title">Find us at the office</h4>
+                        <p className="description">
+                          Bld Mihail Kogalniceanu, nr. 8, <br />
+                          7652 Bucharest, <br />
+                          Romania
+                        </p>
+                      </div>
                     </div>
-                    <div className="description">
-                      <h4 className="info-title">Find us at the office</h4>
-                      <p className="description">
-                        Bld Mihail Kogalniceanu, nr. 8, <br />
-                        7652 Bucharest, <br />
-                        Romania
-                      </p>
+                    <div className="info info-horizontal">
+                      <div className="icon icon-primary">
+                        <i className="tim-icons icon-mobile" />
+                      </div>
+                      <div className="description">
+                        <h4 className="info-title">Give us a ring</h4>
+                        <p className="description">
+                          Michael Jordan <br />
+                          +40 762 321 762 <br />
+                          Mon - Fri, 8:00-22:00
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="info info-horizontal">
-                    <div className="icon icon-primary">
-                      <i className="tim-icons icon-mobile" />
-                    </div>
-                    <div className="description">
-                      <h4 className="info-title">Give us a ring</h4>
-                      <p className="description">
-                        Michael Jordan <br />
-                        +40 762 321 762 <br />
-                        Mon - Fri, 8:00-22:00
-                      </p>
-                    </div>
-                  </div>
-                </Col>
-                <Col className="ml-auto mr-auto" md="5">
-                  <Card className="card-contact card-raised">
-                    <Form id="contact-form-2" method="post" role="form">
-                      <CardHeader className="text-center">
-                        <CardTitle tag="h4">Contact Us</CardTitle>
-                      </CardHeader>
-                      <CardBody>
-                        <Row>
-                          <Col md="6">
-                            <label>First name</label>
-                            <InputGroup
-                              className={classnames({
-                                "input-group-focus": firstNameContact1Focus,
-                              })}
-                            >
-                              <InputGroupText>
-                                <i className="tim-icons icon-single-02" />
-                              </InputGroupText>
-                              <Input
-                                aria-label="First Name..."
-                                placeholder="First Name..."
-                                type="text"
-                                onFocus={(e) => setFirstNameContact1Focus(true)}
-                                onBlur={(e) => setFirstNameContact1Focus(false)}
-                              />
-                            </InputGroup>
-                          </Col>
-                          <Col className="pl-2" md="6">
-                            <FormGroup>
-                              <label>Last name</label>
+                  </Col>
+                  <Col className="ml-auto mr-auto" md="5">
+                    <Card className="card-contact card-raised">
+                      <Form id="contact-form-2" method="post" role="form">
+                        <CardHeader className="text-center">
+                          <CardTitle tag="h4">Contact Us</CardTitle>
+                        </CardHeader>
+                        <CardBody>
+                          <Row>
+                            <Col md="6">
+                              <label>First name</label>
                               <InputGroup
                                 className={classnames({
-                                  "input-group-focus": lastNameContact1Focus,
+                                  "input-group-focus": firstNameContact1Focus,
                                 })}
                               >
                                 <InputGroupText>
-                                  <i className="tim-icons icon-caps-small" />
+                                  <i className="tim-icons icon-single-02" />
                                 </InputGroupText>
                                 <Input
-                                  aria-label="Last Name..."
-                                  placeholder="Last Name..."
+                                  aria-label="First Name..."
+                                  placeholder="First Name..."
                                   type="text"
-                                  onFocus={(e) =>
-                                    setLastNameContact1Focus(true)
-                                  }
-                                  onBlur={(e) =>
-                                    setLastNameContact1Focus(false)
-                                  }
+                                  onFocus={(e) => setFirstNameContact1Focus(true)}
+                                  onBlur={(e) => setFirstNameContact1Focus(false)}
                                 />
                               </InputGroup>
-                            </FormGroup>
-                          </Col>
-                        </Row>
-                        <FormGroup>
-                          <label>Email address</label>
-                          <InputGroup
-                            className={classnames({
-                              "input-group-focus": emailContact1Focus,
-                            })}
-                          >
-                            <InputGroupText>
-                              <i className="tim-icons icon-email-85" />
-                            </InputGroupText>
-                            <Input
-                              placeholder="Email Here..."
-                              type="text"
-                              onFocus={(e) => setEmailContact1Focus(true)}
-                              onBlur={(e) => setEmailContact1Focus(false)}
-                            />
-                          </InputGroup>
-                        </FormGroup>
-                        <FormGroup>
-                          <label>Your message</label>
-                          <Input
-                            id="message-2"
-                            name="message"
-                            rows="6"
-                            type="textarea"
-                          />
-                        </FormGroup>
-                        <Row>
-                          <Col md="6">
-                            <FormGroup check>
-                              <Label check>
-                                <Input type="checkbox" />
-                                <span className="form-check-sign" />
-                                I'm not a robot
-                              </Label>
-                            </FormGroup>
-                          </Col>
-                          <Col md="6">
-                            <Button
-                              className="btn-round pull-right"
-                              color="primary"
+                            </Col>
+                            <Col className="pl-2" md="6">
+                              <FormGroup>
+                                <label>Last name</label>
+                                <InputGroup
+                                  className={classnames({
+                                    "input-group-focus": lastNameContact1Focus,
+                                  })}
+                                >
+                                  <InputGroupText>
+                                    <i className="tim-icons icon-caps-small" />
+                                  </InputGroupText>
+                                  <Input
+                                    aria-label="Last Name..."
+                                    placeholder="Last Name..."
+                                    type="text"
+                                    onFocus={(e) =>
+                                      setLastNameContact1Focus(true)
+                                    }
+                                    onBlur={(e) =>
+                                      setLastNameContact1Focus(false)
+                                    }
+                                  />
+                                </InputGroup>
+                              </FormGroup>
+                            </Col>
+                          </Row>
+                          <FormGroup>
+                            <label>Email address</label>
+                            <InputGroup
+                              className={classnames({
+                                "input-group-focus": emailContact1Focus,
+                              })}
                             >
-                              Send Message
-                            </Button>
-                          </Col>
-                        </Row>
-                      </CardBody>
-                    </Form>
-                  </Card>
-                </Col>
-              </Row>
-            </Container>
-          </div>
+                              <InputGroupText>
+                                <i className="tim-icons icon-email-85" />
+                              </InputGroupText>
+                              <Input
+                                placeholder="Email Here..."
+                                type="text"
+                                onFocus={(e) => setEmailContact1Focus(true)}
+                                onBlur={(e) => setEmailContact1Focus(false)}
+                              />
+                            </InputGroup>
+                          </FormGroup>
+                          <FormGroup>
+                            <label>Your message</label>
+                            <Input
+                              id="message-2"
+                              name="message"
+                              rows="6"
+                              type="textarea"
+                            />
+                          </FormGroup>
+                          <Row>
+                            <Col md="6">
+                              <FormGroup check>
+                                <Label check>
+                                  <Input type="checkbox" />
+                                  <span className="form-check-sign" />
+                                  I'm not a robot
+                                </Label>
+                              </FormGroup>
+                            </Col>
+                            <Col md="6">
+                              <Button
+                                className="btn-round pull-right"
+                                color="primary"
+                              >
+                                Send Message
+                              </Button>
+                            </Col>
+                          </Row>
+                        </CardBody>
+                      </Form>
+                    </Card>
+                  </Col>
+                </Row>
+              </Container>
+            </div>
+          </section>
           {/* ********* END CONTACT US 1 ********* */}
         </div>
         <DemoFooter />
