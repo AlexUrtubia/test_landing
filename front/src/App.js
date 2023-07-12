@@ -1,6 +1,5 @@
 import React from "react";
 
-
 import "assets/css/nucleo-icons.css";
 import "assets/css/blk-design-system-pro-react.css";
 import "assets/demo/demo.css";
@@ -12,6 +11,7 @@ import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import Presentation from "views/Presentation.js";
 import LandingPage from "views/examples/LandingPage.js";
 import Index from "views/Index.js";
+import ProyectosGla from "views/examples/ProyectosGla";
 
 /* const sendLoginRequest = async () => {
     return await fetch("https://landing-auris.azurewebsites.net/api/mail-contact", {
@@ -56,10 +56,12 @@ function App() {
       <Routes>
         <Route path="/home" element={<Index />} />
         {/* <Route path="/home" element={<Presentation />} /> */}
-        {/* <Route path="/sections" element={<Sections />} />
-        <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/blog-post" element={<BlogPost />} />
-        <Route path="/blog-posts" element={<BlogPosts />} />
+         {/* <Route path="/sections" element={<Sections />} />
+        <Route path="/about-us" element={<AboutUs />} /> */}
+        <Route path="/proyectos">
+          <Route path="glaciares" element={<ProyectosGla />} />
+        </Route>
+        {/*<Route path="/blog-posts" element={<BlogPosts />} />
         <Route path="/contact-us" element={<ContactUs />} /> */}
         <Route path="/landing-page" element={<LandingPage />} />
         {/* <Route path="/pricing" element={<Pricing />} /> */}

@@ -22,7 +22,7 @@ import { Container } from "reactstrap";
 export default function Index() {
   return (
     <>
-      <div className="page-header">
+      <div id="aurisNavbar" className="page-header">
         <div className="squares square1" />
         <div className="squares square2" />
         <div className="squares square3" />

@@ -2,8 +2,9 @@ import React from "react";
 
 import ColorNavbar from "components/Navbars/ColorNavbar.js";
 import IndexHeader from "components/Headers/IndexHeader.js";
-import DemoFooter from "components/Footers/DemoFooter.js";
+import AurisFooter from "components/Footers/AurisFooter.js";
 import classnames from "classnames";
+import { Link, Navigate } from 'react-router-dom';
 
 import {
   Badge,
@@ -30,6 +31,7 @@ import {
   UncontrolledCollapse,
 } from "reactstrap";
 import NavbarAuris from "components/Navbars/NavbarAuris";
+import Clientes from "./SectionsSections/Clientes";
 
 export default function Index() {
   const wrapper = React.useRef(null);
@@ -57,7 +59,7 @@ export default function Index() {
       <div className="wrapper" ref={wrapper}>
         <div className="main">
         <IndexHeader />
-          <section className="section section-lg">
+          <section id="nosotros" className="section section-lg">
             <section className="section">
               <div className="features-3">
                 <img
@@ -205,8 +207,11 @@ export default function Index() {
               </div>
             </section>
           </section>
+          <section id="testimonials" className="section section-lg">
+            <Clientes/>
+          </section>
           {/* ********* PROJECTS 3 ********* */}
-          <section className="section section-lg">
+          <section id="proyectos" className="section section-lg">
             <div className="projects-3">
               <Container>
                 <img
@@ -233,39 +238,36 @@ export default function Index() {
                   </Col>
                 </Row>
                 <div className="space-50" />
-                <Row>
-                  <Col md="6">
+                <Row >
+                  <Col md="6" className="px-5">
                     <Card className="card-blog card-plain">
                       <CardHeader>
-                        <h2 className="title">Passions</h2>
+                        <h2 className="title">Glaciares</h2>
                         <Badge color="danger" className="mr-1">
                           Methods
                         </Badge>
                         <Badge color="info">Purposes</Badge>
                       </CardHeader>
-                      <div className="card-image">
-                        <a href="#pablo" onClick={(e) => e.preventDefault()}>
+                      <div className="proyect-cover">
+                        <a href="#" onClick={(e) => e.preventDefault()}>
                           <img
                             alt="..."
                             className="img rounded img-raised"
-                            src={require("assets/img/card-blog2.jpg")}
+                            src={require("assets/img/proyectos/glaciares1.png")}
                           />
                         </a>
                       </div>
-                      <CardFooter className="text-left">
-                        <div className="author">
-                          <Button
-                            className="btn-round btn-simple"
-                            color="primary"
-                          >
-                            <i className="tim-icons icon-triangle-right-17" />
-                            View project details
-                          </Button>
-                        </div>
-                      </CardFooter>
+                    <CardFooter className="text-left">
+                      <div className="author">
+                        <Link to="/proyectos/glaciares" className="btn-round btn-simple btn-info">
+                          <i className="tim-icons icon-minimal-right" />
+                          Ver proyecto
+                        </Link>
+                      </div>
+                    </CardFooter>
                     </Card>
                   </Col>
-                  <Col md="6">
+                  <Col md="6" className="px-5">
                     <Card className="card-blog card-plain">
                       <CardHeader>
                         <h2 className="title">Habits</h2>
@@ -294,8 +296,8 @@ export default function Index() {
                   </Col>
                 </Row>
                 <div className="space-50" />
-                <Row>
-                  <Col md="6">
+                <Row >
+                  <Col md="6" className="px-5">
                     <Card className="card-blog card-plain">
                       <CardHeader>
                         <h2 className="title">Sport</h2>
@@ -325,7 +327,7 @@ export default function Index() {
                       </CardFooter>
                     </Card>
                   </Col>
-                  <Col md="6">
+                  <Col md="6" className="px-5">
                     <Card className="card-blog card-plain">
                       <CardHeader>
                         <h2 className="title">Nights</h2>
@@ -361,12 +363,7 @@ export default function Index() {
             </div>
           </section>
           {/* ********* CONTACT US 1 ********* */}
-          <section className="section section-lg">
-            {/* <img
-              alt="..."
-              className="path1"
-              src={require("assets/img/path2.png")}
-            /> */}
+          <section id="contacto" className="section section-lg">
             <img
               alt="..."
               className="path3"
@@ -386,15 +383,14 @@ export default function Index() {
                     <h2 className="title mt-0">Contáctenos</h2>
                   </Col>
                 </Row>
-                <Row>
+                <Row className="pl-1">
                   <Col md="5">
-                    <h2 className="title">Get in Touch</h2>
+                    <h2 className="title">Encuentre la solución perfecta</h2>
                     <h4 className="description">
-                      You need more information? Check what other persons are
-                      saying about our product. They are very happy with their
-                      purchase.
+                      ¿Necesita más información?
+                      Escríbanos aquí para contactarnos con usted y darle una asesoría personalizada.
                     </h4>
-                    <div className="info info-horizontal">
+                    {/* <div className="info info-horizontal">
                       <div className="icon icon-primary">
                         <i className="tim-icons icon-square-pin" />
                       </div>
@@ -406,13 +402,18 @@ export default function Index() {
                           Romania
                         </p>
                       </div>
-                    </div>
+                    </div> */}
                     <div className="info info-horizontal">
                       <div className="icon icon-primary">
                         <i className="tim-icons icon-mobile" />
                       </div>
                       <div className="description">
-                        <h4 className="info-title">Give us a ring</h4>
+                        <h4 className="info-title text-left">También puede contactarnos en:</h4>
+                        <p className="description">
+                          Michael Jordan <br />
+                          +40 762 321 762 <br />
+                          Mon - Fri, 8:00-22:00
+                        </p><br />
                         <p className="description">
                           Michael Jordan <br />
                           +40 762 321 762 <br />
@@ -425,23 +426,25 @@ export default function Index() {
                     <Card className="card-contact card-raised">
                       <Form id="contact-form-2" method="post" role="form">
                         <CardHeader className="text-center">
-                          <CardTitle tag="h4">Contact Us</CardTitle>
+                          <CardTitle tag="h4">Déjenos su mensaje</CardTitle>
                         </CardHeader>
                         <CardBody>
                           <Row>
                             <Col md="6">
-                              <label>First name</label>
+                              <label>Nombre</label>
                               <InputGroup
                                 className={classnames({
                                   "input-group-focus": firstNameContact1Focus,
                                 })}
                               >
-                                <InputGroupText>
-                                  <i className="tim-icons icon-single-02" />
-                                </InputGroupText>
+                                <div className="input-group-prepend">
+                                  <span className="input-group-text" id="basic-addon2">
+                                    <i className="tim-icons icon-single-02" />
+                                  </span>
+                                </div>
                                 <Input
-                                  aria-label="First Name..."
-                                  placeholder="First Name..."
+                                  aria-label="Su nombre"
+                                  placeholder="Su nombre"
                                   type="text"
                                   onFocus={(e) => setFirstNameContact1Focus(true)}
                                   onBlur={(e) => setFirstNameContact1Focus(false)}
@@ -450,18 +453,20 @@ export default function Index() {
                             </Col>
                             <Col className="pl-2" md="6">
                               <FormGroup>
-                                <label>Last name</label>
+                                <label>Número</label>
                                 <InputGroup
                                   className={classnames({
                                     "input-group-focus": lastNameContact1Focus,
                                   })}
                                 >
-                                  <InputGroupText>
-                                    <i className="tim-icons icon-caps-small" />
-                                  </InputGroupText>
+                                  <div className="input-group-prepend">
+                                    <span className="input-group-text" id="basic-addon2">
+                                      <i class="fa fa-phone"></i>
+                                    </span>
+                                  </div>
                                   <Input
-                                    aria-label="Last Name..."
-                                    placeholder="Last Name..."
+                                    aria-label="Su número telefónico"
+                                    placeholder="Su número telefónico"
                                     type="text"
                                     onFocus={(e) =>
                                       setLastNameContact1Focus(true)
@@ -475,17 +480,19 @@ export default function Index() {
                             </Col>
                           </Row>
                           <FormGroup>
-                            <label>Email address</label>
+                            <label>Email</label>
                             <InputGroup
                               className={classnames({
                                 "input-group-focus": emailContact1Focus,
                               })}
                             >
-                              <InputGroupText>
-                                <i className="tim-icons icon-email-85" />
-                              </InputGroupText>
+                              <div className="input-group-prepend">
+                                <span className="input-group-text" id="basic-addon2">
+                                  <i className="tim-icons icon-email-85" />
+                                </span>
+                              </div>
                               <Input
-                                placeholder="Email Here..."
+                                placeholder="Su email"
                                 type="text"
                                 onFocus={(e) => setEmailContact1Focus(true)}
                                 onBlur={(e) => setEmailContact1Focus(false)}
@@ -493,7 +500,7 @@ export default function Index() {
                             </InputGroup>
                           </FormGroup>
                           <FormGroup>
-                            <label>Your message</label>
+                            <label>Su mensaje</label>
                             <Input
                               id="message-2"
                               name="message"
@@ -503,20 +510,20 @@ export default function Index() {
                           </FormGroup>
                           <Row>
                             <Col md="6">
-                              <FormGroup check>
+                              {/* <FormGroup check>
                                 <Label check>
                                   <Input type="checkbox" />
                                   <span className="form-check-sign" />
                                   I'm not a robot
                                 </Label>
-                              </FormGroup>
+                              </FormGroup> */}
                             </Col>
                             <Col md="6">
                               <Button
                                 className="btn-round pull-right"
-                                color="primary"
+                                color="#3281de"q
                               >
-                                Send Message
+                                Enviar
                               </Button>
                             </Col>
                           </Row>
@@ -530,7 +537,7 @@ export default function Index() {
           </section>
           {/* ********* END CONTACT US 1 ********* */}
         </div>
-        <DemoFooter />
+        <AurisFooter />
       </div>
     </>
   );

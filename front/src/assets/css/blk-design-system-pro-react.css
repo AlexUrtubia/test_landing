@@ -495,6 +495,21 @@ mark,
   background-color: #fcf8e3;
 }
 
+.clientes {
+  width: 80%;
+  aspect-ratio: 3/2;
+  object-fit: contain;
+  mix-blend-mode: color-burn;
+}
+
+.wi-client{
+  max-width: 300px !important;
+}
+
+.less-xpad{
+  margin-left: -8rem !important;
+  margin-right: -8rem !important;
+}
 .list-unstyled {
   padding-left: 0;
   list-style: none;
@@ -612,11 +627,10 @@ pre code {
   margin-right: auto;
   margin-left: auto;
 }
-
-@media (min-width: 576px) {
+@media (min-width: 360px) {
   .container,
   .container-sm {
-    max-width: 540px;
+    max-width: 360px;
   }
 }
 
@@ -624,26 +638,32 @@ pre code {
   .container,
   .container-sm,
   .container-md {
-    max-width: 720px;
+    max-width: 768px;
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
   .container,
   .container-sm,
   .container-md,
   .container-lg {
-    max-width: 960px;
+    max-width: 1024px;
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1366px) {
   .container,
   .container-sm,
   .container-md,
   .container-lg,
   .container-xl {
-    max-width: 1140px;
+    max-width: 1366px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .container-xl {
+    max-width: 1920px;
   }
 }
 
@@ -946,7 +966,7 @@ pre code {
   margin-left: 91.66667%;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 360px) {
   .col-sm {
     flex-basis: 0;
     flex-grow: 1;
@@ -1278,7 +1298,7 @@ pre code {
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
   .col-lg {
     flex-basis: 0;
     flex-grow: 1;
@@ -1444,7 +1464,7 @@ pre code {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1366px) {
   .col-xl {
     flex-basis: 0;
     flex-grow: 1;
@@ -3940,7 +3960,7 @@ input[type="button"].btn-block {
   text-align: center;
   white-space: nowrap;
   background-color: transparent;
-  border: 1px solid #cad1d7;
+  border: 1px solid #2b3553;
   border-radius: 0.25rem;
 }
 .input-group-text input[type="radio"],
@@ -6753,7 +6773,7 @@ a.close.disabled {
 .carousel-indicators {
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: -30px;
   left: 0;
   z-index: 15;
   display: flex;
@@ -6763,21 +6783,23 @@ a.close.disabled {
   margin-left: 15%;
   list-style: none;
 }
-.carousel-indicators li {
+.carousel-indicators [data-bs-target] {
   box-sizing: content-box;
   flex: 0 1 auto;
   width: 30px;
   height: 3px;
+  padding: 0;
   margin-right: 3px;
   margin-left: 3px;
   text-indent: -999px;
   cursor: pointer;
-  background-color: #ffffff;
+  background-color: #fff;
   background-clip: padding-box;
+  border: 0;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
-  opacity: 0.5;
-  transition: opacity 0.6s ease;
+  opacity: .5;
+  transition: opacity .6s ease;
 }
 @media (prefers-reduced-motion: reduce) {
   .carousel-indicators li {
@@ -15754,7 +15776,7 @@ img {
   padding: 0.9375rem;
   width: 100%;
   z-index: 1050;
-  background: #e14eca;
+  background: #000000;
 }
 .navbar .photo {
   display: inline-block;
@@ -18848,7 +18870,7 @@ a.badge-success.focus {
 }
 
 .info {
-  max-width: 360px;
+  max-width: 300px;
   margin: 0 auto;
   padding: 70px 10px 30px;
   text-align: center;
@@ -19974,8 +19996,8 @@ html {
 
 .section-testimonials .info,
 .testimonials-2 .info {
-  margin-bottom: 50px;
-  padding-top: 30px;
+  margin-bottom: 10px;
+  padding-top: 20px;
 }
 .section-testimonials .info:hover p,
 .testimonials-2 .info:hover p {
@@ -20132,6 +20154,8 @@ html {
 
 .contactus-1 .card-contact {
   margin-top: 30px;
+  min-width: 375px;
+  padding: 10px;
 }
 
 .contactus-2 {
@@ -20139,7 +20163,7 @@ html {
   position: relative;
 }
 .contactus-2 .card-contact {
-  max-width: 560px;
+  max-width: 590px;
   margin: 80px 0 80px 150px;
 }
 .contactus-2 .card-contact .info {
@@ -20809,11 +20833,12 @@ html {
   max-height: 200px;
 }
 .index-page .section:first-of-type .path {
-  left: 850px;
+  position: absolute;
+  left: 740px;
   max-width: 55%;
   top: 20px;
 }
-.index-page .section:nth-of-type(2) .path2 {
+.index-page .section:nth-of-type(3) .path2 {
   /* left: auto; */
   left: 20px;
   max-width: 30%;
@@ -20821,14 +20846,14 @@ html {
   top: -500px;
 }
 
-.index-page .section:nth-of-type(2) .path3 {
+.index-page .section:nth-of-type(3) .path3 {
   position: absolute;
   right: 10px;
   max-width: 45%;
   opacity: 0.02;
 }
 
-.index-page .section:nth-of-type(2) .path4 {
+.index-page .section:nth-of-type(3) .path4 {
   position: absolute;
   right: 1200px;
   max-width: 30%;
@@ -20836,7 +20861,7 @@ html {
   bottom: 334px;
 }
 
-.index-page .section:nth-of-type(3) .path1 {
+.index-page .section:nth-of-type(4) .path1 {
   position: absolute;
   opacity: 0.02;
   right: 94px;
@@ -20844,7 +20869,7 @@ html {
   top: 350px;
 }
 
-.index-page .section:nth-of-type(3) .path3 {
+.index-page .section:nth-of-type(4) .path3 {
   position: absolute;
   opacity: 0.02;
   /* left: 10px; */
@@ -20853,7 +20878,7 @@ html {
   top: -100px;
 }
 
-.index-page .section:nth-of-type(3) .path2 {
+.index-page .section:nth-of-type(4) .path2 {
   position: absolute;
   opacity: 0.02;
   left: 200px;
@@ -21549,7 +21574,20 @@ html {
   position: relative;
 }
 
+@media (max-width: 1640px) and (min-width: 992px) {
+  .section:first-of-type .path {
+    left: 43% !important;
+    max-width: 10%;
+  }
+}
+
+
 @media (max-width: 991.98px) {
+
+  .section:first-of-type .path {
+    left: 45% !important;
+    max-width: 20%;
+  }
   .section:nth-of-type(2) .path {
     left: 10% !important;
   }
@@ -21589,6 +21627,10 @@ html {
 @media (max-width: 767.98px) {
   .card-login img {
     width: 70%;
+  }
+  .section:first-of-type .path {
+    right: 2% !important;
+    max-width: 70%;
   }
   .section:nth-of-type(2) .path,
   .section:nth-of-type(2) .path2 {
@@ -24018,7 +24060,7 @@ html {
 [class*="pricing-"],
 [class*="testimonials-"],
 [class*="contactus-"] {
-  padding: 80px 0;
+  padding: 60px 0;
 }
 
 @media screen and (min-width: 991px) {
@@ -26933,7 +26975,7 @@ select.selectpicker {
   margin-right: 5px;
 }
 .card label {
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   margin-bottom: 5px;
 }
 .card .card-footer {
@@ -27632,6 +27674,16 @@ select.selectpicker {
 }
 .card-blog .card-image {
   height: 380px;
+}
+
+.card-blog .proyect-cover img {
+  width: 100%;
+  max-height: 380px;
+  /* height: 90%; */
+  aspect-ratio: 7/5;
+  padding-bottom: 20px;
+  /* object-fit: cover; */
+  /* mix-blend-mode: color-burn; */
 }
 .card-blog .card-image img {
   height: 100%;
@@ -30045,7 +30097,7 @@ a.react-tagsinput .react-tagsinput-tag.bg-neutral.focus {
 .form-control:focus ~ .input-group-prepend .input-group-text,
 .input-group-focus .input-group-prepend .input-group-text,
 .input-group-focus .input-group-append .input-group-text {
-  border-color: #1d8cf8;
+  border-color: blue;
 }
 
 .has-danger .form-control:focus {
